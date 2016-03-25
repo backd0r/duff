@@ -43,85 +43,84 @@ def main():
             def inicio():
                 while True:
                     print '''
-    1) Crear contraseñas complejas utilizando el archivo de caracteres.
-    2) Crear solo contraseñas de números.
-    3) Configurar archivo de caracteres.
-    4) Salir!
+1) Crear contraseñas complejas utilizando el archivo de caracteres.
+2) Crear solo contraseñas de números.
+3) Configurar archivo de caracteres.
+4) Salir!
                             '''
                     option1 = raw_input(tcolors.C + "duff > " + tcolors.N)
                     while option1 == "3":  # Muestra menú 2
                         print '''
-    1) Crear archivo charset.
-    2) Cargar nueva sección de caracteres.
-    3) Ver el contenido del archivo de caracteres.
-    4) Regresar al menú anterior.
+1) Crear archivo charset.
+2) Cargar nueva sección de caracteres.
+3) Ver el contenido del archivo de caracteres.
+4) Regresar al menú anterior.
                             '''
                         option2 = raw_input(tcolors.C + "duff > " + tcolors.N)
                         if option2 == "1":  # Crear el charset.lst por defecto.
                             outfile = "charset.lst"
 
-                            fout = open(outfile, "w+")
+                            fileout = open(outfile, "w+")
                             lib = '''hexlower = 0123456789abcdef
-    hexupper = 0123456789ABCDEF
+hexupper = 0123456789ABCDEF
 
-    numeric = 0123456789
-    numericspace = 0 123456789
+numeric = 0123456789
+numericspace = 0 123456789
 
-    symbols = !@#$%^&*()-_+=
-    symbolsspace = !@#$%^&*( )=-_+
+symbols = !@#$%^&*()-_+=
+symbolsspace = !@#$%^&*( )=-_+
 
-    symbolsall = !@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
-    symbolsallspace = !@#$%^&*()-_+=~`[]{}|\:;"'< >,.?/
+symbolsall = !@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+symbolsallspace = !@#$%^&*()-_+=~`[]{}|\:;"'< >,.?/
 
-    ualpha = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    ualphaspace = ABCDEFGHIJKLMNOPQRSTUVWXY Z
-    ualphanumeric = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-    ualphanumericspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
-    ualphanumericsymbol = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=
-    ualphanumericsymbolspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789!@#$%^&*()=-_+
-    ualphanumericall = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
-    ualphanumericallspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+ualpha = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ualphaspace = ABCDEFGHIJKLMNOPQRSTUVWXY Z
+ualphanumeric = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+ualphanumericspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
+ualphanumericsymbol = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=
+ualphanumericsymbolspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789!@#$%^&*()=-_+
+ualphanumericall = ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+ualphanumericallspace = ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
 
-    lalpha = abcdefghijklmnopqrstuvwxyz
-    lalphaspace = abcdefghijklmnopqrstuvwxy z
-    lalphanumeric = abcdefghijklmnopqrstuvwxyz0123456789
-    lalphanumericspace = abcdefghijklmnopqrstuvwxyz 0123456789
-    lalphanumericsymbol = abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_+=
-    lalphanumericsymbolspace = abcdefghijklmnopqrstuvwxyz 0123456789!@#$%^&*()=-_+
-    lalphanumericall = abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
-    lalphanumericallspace = abcdefghijklmnopqrstuvwxyz 0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+lalpha = abcdefghijklmnopqrstuvwxyz
+lalphaspace = abcdefghijklmnopqrstuvwxy z
+lalphanumeric = abcdefghijklmnopqrstuvwxyz0123456789
+lalphanumericspace = abcdefghijklmnopqrstuvwxyz 0123456789
+lalphanumericsymbol = abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_+=
+lalphanumericsymbolspace = abcdefghijklmnopqrstuvwxyz 0123456789!@#$%^&*()=-_+
+lalphanumericall = abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+lalphanumericallspace = abcdefghijklmnopqrstuvwxyz 0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
 
-    mixalpha = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-    mixalphaspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    mixalphanumeric = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-    mixalphanumericspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
-    mixalphanumericsymbol = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=
-    mixalphanumericsymbolspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+
-    mixalphanumericall = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
-    mixalphanumericallspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+mixalpha = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+mixalphaspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+mixalphanumeric = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+mixalphanumericspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+mixalphanumericsymbol = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=
+mixalphanumericsymbolspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+
+mixalphanumericall = abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
+mixalphanumericallspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=~`[]{}|\:;"'<>,.?/
 
-    #############################
-    #  U S E R   O P T I O N S  #
-    #############################
-
-    '''
-                            fout.write(lib)
-                            fout.close()
+#############################
+#  U S E R   O P T I O N S  #
+#############################
+'''
+                            fileout.write(lib)
+                            fileout.close()
                             print tcolors.R + "Espere por favor." + tcolors.N
                             print tcolors.R + "Listo, he creado charset.lst." + tcolors.N
                             time.sleep(2)
                             os.system("clear")
                         elif option2 == "2":  # Añadir contenido al charset.lst
                             print tcolors.R + '''
-    Para usar esta opción tienes que darme los valores de la siguiente forma:
+Para usar esta opción tienes que darme los valores de la siguiente forma:
     ''' + tcolors.C + '''       ej. duff > ''' + tcolors.N + '''minuevaseccion = AQUI LOS CARACTERES A USAR'''
                             print ""
                             line = raw_input(tcolors.C + "duff > " + tcolors.N) + "\n"
                             infile = "charset.lst"
                             if line != "\n":
-                                fin = open(infile, "a")
-                                fin.write(line)
-                                fin.close()
+                                filein = open(infile, "a")
+                                filein.write(line)
+                                filein.close()
                             else:
                                 print ""
                                 print tcolors.R + "Creo que no me has dado ningún valor." + tcolors.N
@@ -155,8 +154,8 @@ def main():
                         numpass = int(raw_input(tcolors.C + "duff > " + tcolors.N))
                         print ""
                         print tcolors.R + '''[!] Con que caracteres debo trabajar. (usa el charset.lst)''' + tcolors.G + '''
-    Ejemplo:
-    Si debo trabajar solo con letras mayusculas me das el siguiente valor.
+Ejemplo:
+Si debo trabajar solo con letras mayusculas me das el siguiente valor.
     ''' + tcolors.C + '''       ej. duff > ''' + tcolors.N + ''' ualpha
     ''' + tcolors.N
                         print ""
@@ -285,7 +284,7 @@ def main():
                                 if option2 == "1":  # Crear el charset.lst por defecto.
                                     outfile = "charset.lst"
 
-                                    fout = open(outfile, "w+")
+                                    fileout = open(outfile, "w+")
                                     lib = '''hexlower = 0123456789abcdef
 hexupper = 0123456789ABCDEF
 
@@ -329,8 +328,8 @@ mixalphanumericallspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0
 #  U S E R   O P T I O N S  #
 #############################
 '''
-                                    fout.write(lib)
-                                    fout.close()
+                                    fileout.write(lib)
+                                    fileout.close()
                                     print "Espere por favor."
                                     time.sleep(1)
                                     print "Listo, he creado charset.lst."
@@ -344,9 +343,9 @@ mixalphanumericallspace = abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0
                                     line = raw_input("duff > ") + "\n"
                                     infile = "charset.lst"
                                     if line != "\n":
-                                        fin = open(infile, "a")
-                                        fin.write(line)
-                                        fin.close()
+                                        filein = open(infile, "a")
+                                        filein.write(line)
+                                        filein.close()
                                     else:
                                         print ""
                                         print "Creo que no me has dado ningun valor."
