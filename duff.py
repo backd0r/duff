@@ -9,15 +9,14 @@ from random import choice
 
 
 class tcolors:
-    BK = '\033[0m' # negro
-    N = '\033[m'  # blanco
-    R = '\033[31m'  # rojo
+    N = '\033[0m'  # Default
+    R = '\033[31;1m'  # rojo
     G = '\033[32m'  # verde
     O = '\033[33m'  # naranja
     B = '\033[34m'  # azul
-    P = '\033[35m'  # morado
-    C = '\033[36m'  # cian
-    GR = '\033[37m'  # gris
+    M = '\033[35m'  # magenta
+    C = '\033[36;1m'  # cian
+    BK = '\033[37;1m'  # blanco
 
 
 def main():
