@@ -10,7 +10,7 @@ from random import choice
 
 class tcolors:
     BK = '\033[0m' # negro
-    N = '\033[m'  # blanco (normal)
+    N = '\033[m'  # blanco
     R = '\033[31m'  # rojo
     G = '\033[32m'  # verde
     O = '\033[33m'  # naranja
