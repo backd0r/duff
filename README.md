@@ -14,3 +14,4 @@ El script te guía a través de su pantalla principal, seleccionas la opción qu
 
 # Contacto
 * Email: bacd0r@bk.ru
+* https://underc0de.org/foro/profile/backd0r/
