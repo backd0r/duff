@@ -9,6 +9,7 @@ Python 2.7 - Probado en Windows, Linux, Mac OS X El Capitan
 * sudo su
 * git clone https://github.com/backd0r/duff.git
 * chmod +x duff.py
+* ./duff.py
 
 ### Windows
 * Descargar archivo zip.
